@@ -1,0 +1,67 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="welcome">
+    <p class="eyebrow">YOUR FINANCIAL DATABASE</p>
+    <h1>Welcome to LoanLens 👋</h1>
+    <p>
+        A central place to explore customer records,
+        loan applications and loan information.
+    </p>
+</section>
+
+<h3 class="section-title">Database Overview</h3>
+
+<div class="stats-grid">
+
+    <a href="/table/customers" class="stat-card">
+        <div class="stat-icon">♙</div>
+        <p>Total Customers</p>
+        <h2>{{ counts['customers'] }}</h2>
+        <span>View customers →</span>
+    </a>
+
+    <a href="/table/branches" class="stat-card">
+        <div class="stat-icon">⌂</div>
+        <p>Total Branches</p>
+        <h2>{{ counts['branches'] }}</h2>
+        <span>Explore branches →</span>
+    </a>
+
+    <a href="/table/loan-types" class="stat-card">
+        <div class="stat-icon">▤</div>
+        <p>Loan Types</p>
+        <h2>{{ counts['loan-types'] }}</h2>
+        <span>View categories →</span>
+    </a>
+
+    <a href="/table/applications" class="stat-card">
+        <div class="stat-icon">▣</div>
+        <p>Loan Applications</p>
+        <h2>{{ counts['applications'] }}</h2>
+        <span>Explore applications →</span>
+    </a>
+
+    <a href="/table/loans" class="stat-card">
+        <div class="stat-icon">₹</div>
+        <p>Total Loans</p>
+        <h2>{{ counts['loans'] }}</h2>
+        <span>View loans →</span>
+    </a>
+
+</div>
+
+<section class="quick-section">
+    <h3>Quick Access</h3>
+    <p>Select a section to explore your database records.</p>
+
+    <div class="quick-links">
+        <a href="/table/customers">Customers ↗</a>
+        <a href="/table/applications">Applications ↗</a>
+        <a href="/table/loans">Loans ↗</a>
+    </div>
+</section>
+
+{% endblock %}

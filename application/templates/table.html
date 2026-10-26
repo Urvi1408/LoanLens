@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="welcome">
+    <p class="eyebrow">LOANLENS / DATABASE</p>
+    <h1>{{ table_name.replace('_', ' ') }}</h1>
+    <p>View records stored in your LoanLens database.</p>
+</section>
+
+<div class="table-panel">
+    <div class="table-heading">
+        <h3>All Records</h3>
+        <span class="record-count">{{ rows|length }} records</span>
+    </div>
+
+    {% if rows %}
+    <div class="table-scroll">
+        <table>
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th>{{ column.replace('_', ' ') }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    {% for column in columns %}
+                    <td>{{ row[column] if row[column] is not none else '—' }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="empty-state">No records found in this table.</p>
+    {% endif %}
+</div>
+
+<a href="/" class="back-link">← Back to Dashboard</a>
+
+{% endblock %}

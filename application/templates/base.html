@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanLens | Loan Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="/" class="brand">Loan<span>Lens</span></a>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <a href="/" class="nav-link">Dashboard</a>
+        <a href="/table/customers" class="nav-link">Customers</a>
+        <a href="/table/branches" class="nav-link">Branches</a>
+        <a href="/table/loan-types" class="nav-link">Loan Types</a>
+        <a href="/table/applications" class="nav-link">Applications</a>
+        <a href="/table/loans" class="nav-link">Loans</a>
+
+        <div class="sidebar-bottom">
+            Database Management System
+            <br>LoanLens © 2026
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">LOANLENS / MANAGEMENT</p>
+                <h2>Loan Management Portal</h2>
+            </div>
+
+            <div class="user-tag">ADMIN</div>
+        </header>
+
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
